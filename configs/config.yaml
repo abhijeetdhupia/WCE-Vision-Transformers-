@@ -1,0 +1,69 @@
+# Configurations 
+
+model: vision_transformers
+seed: 123
+batch_size: 4
+gpu: 2
+dataset:
+  path: "./data/kid2_abvsnormal/" #ampullavsnormal
+  mean_stdpath: "./../data/kid2_abvsnormal/ampullavsnormal"
+  size: 360 
+  mean_vals : 
+    ampullavsnormal: [0.3788, 0.2493, 0.2062] 
+    inflammatoryvsnormal: []
+    polypoidsvsnormal: []
+    vascularvsnormal: []
+
+  std_vals : 
+    ampullavsnormal: [0.2917, 0.2156, 0.1678] 
+    inflammatoryvsnormal: []
+    polypoidsvsnormal: []
+    vascularvsnormal: []
+
+training: 
+  learning_rate: 3.5e-4
+  epochs: 10
+  batch_size: 1
+  n_workers: 4
+  multi_gpus: True
+
+weights: 
+  best: "2020-12-22~12:50:07" #Need to change it accordingly 
+
+abnormalities: 
+  kid1: 
+    - ampulla-of-vater 
+    - inflammatory 
+    - polypoids 
+    - vascular
+    - Angioectasias 
+    - Apthae
+    - Bleeding 
+    - ChylousCysts 
+    - Lymphangectasias
+    - Polypoids 
+    - Stenoses
+    - Ulcers 
+    - VillousOedemas
+  kid2: 
+    - ampulla-of-vater 
+    - inflammatory 
+    - polypoids 
+    - vascular
+  both: 
+    - Angioectasias 
+    - Apthae
+    - Bleeding 
+    - ChylousCysts 
+    - Lymphangectasias
+    - Polypoids 
+    - Stenoses
+    - Ulcers 
+    - VillousOedemas
+    - ampulla-of-vater
+    - inflammatory
+    - vascular
+
+signature: | 
+  Abhijeet Dhupia
+  email - abhijeetd@iisc.ac.in
